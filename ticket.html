@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,8 +13,9 @@
             margin: 16px;
             border: 1px solid #E0E0E0;
             position: relative;
-          }
-          .ticket:before {
+        }
+        
+        .ticket:before {
             content: "";
             width: 32px;
             height: 32px;
@@ -27,8 +29,9 @@
             top: 50%;
             margin-top: -16px;
             border-radius: 50%;
-          }
-          .ticket:after {
+        }
+        
+        .ticket:after {
             content: "";
             width: 32px;
             height: 32px;
@@ -42,12 +45,14 @@
             top: 50%;
             margin-top: -16px;
             border-radius: 50%;
-          }
-          .ticket--start {
+        }
+        
+        .ticket--start {
             position: relative;
             border-right: 1px dashed #E0E0E0;
-          }
-          .ticket--start:before {
+        }
+        
+        .ticket--start:before {
             content: "";
             width: 32px;
             height: 32px;
@@ -62,8 +67,9 @@
             top: -2px;
             margin-top: -16px;
             border-radius: 50%;
-          }
-          .ticket--start:after {
+        }
+        
+        .ticket--start:after {
             content: "";
             width: 32px;
             height: 32px;
@@ -78,52 +84,62 @@
             top: 100%;
             margin-top: -16px;
             border-radius: 50%;
-          }
-          .ticket--start > img {
+        }
+        
+        .ticket--start>img {
             display: block;
             padding: 24px;
             height: 270px;
-          }
-          .ticket--center {
+        }
+        
+        .ticket--center {
             padding: 24px;
             flex: 1;
-          }
-          .ticket--center--row {
+        }
+        
+        .ticket--center--row {
             display: flex;
-          }
-          .ticket--center--row:not(:last-child) {
+        }
+        
+        .ticket--center--row:not(:last-child) {
             padding-bottom: 48px;
-          }
-          .ticket--center--row:first-child span {
+        }
+        
+        .ticket--center--row:first-child span {
             color: #4872b0;
             text-transform: uppercase;
             line-height: 24px;
             font-size: 13px;
             font-weight: 500;
-          }
-          .ticket--center--row:first-child strong {
+        }
+        
+        .ticket--center--row:first-child strong {
             font-size: 20px;
             font-weight: 400;
             text-transform: uppercase;
-          }
-          .ticket--center--col {
+        }
+        
+        .ticket--center--col {
             display: flex;
             flex: 1;
             width: 50%;
             box-sizing: border-box;
             flex-direction: column;
-          }
-          .ticket--center--col:not(:last-child) {
+        }
+        
+        .ticket--center--col:not(:last-child) {
             padding-right: 16px;
-          }
-          .ticket--end {
+        }
+        
+        .ticket--end {
             padding: 24px;
             background-color: #4872b0;
             display: flex;
             flex-direction: column;
             position: relative;
-          }
-          .ticket--end:before {
+        }
+        
+        .ticket--end:before {
             content: "";
             width: 32px;
             height: 32px;
@@ -138,8 +154,9 @@
             top: -2px;
             margin-top: -16px;
             border-radius: 50%;
-          }
-          .ticket--end:after {
+        }
+        
+        .ticket--end:after {
             content: "";
             width: 32px;
             height: 32px;
@@ -154,22 +171,26 @@
             top: 100%;
             margin-top: -16px;
             border-radius: 50%;
-          }
-          .ticket--end > div:first-child {
+        }
+        
+        .ticket--end>div:first-child {
             flex: 1;
-          }
-          .ticket--end > div:first-child > img {
+        }
+        
+        .ticket--end>div:first-child>img {
             width: 128px;
             padding: 4px;
             background-color: #fff;
-          }
-          .ticket--end > div:last-child > img {
+        }
+        
+        .ticket--end>div:last-child>img {
             display: block;
             margin: 0 auto;
             filter: brightness(0) invert(1);
             opacity: 0.64;
-          }
-          .ticket--info--title {
+        }
+        
+        .ticket--info--title {
             text-transform: uppercase;
             color: #757575;
             font-size: 13px;
@@ -178,8 +199,9 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-          }
-          .ticket--info--subtitle {
+        }
+        
+        .ticket--info--subtitle {
             font-size: 16px;
             line-height: 24px;
             font-weight: 500;
@@ -187,106 +209,132 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-          }
-          .ticket--info--content {
+        }
+        
+        .ticket--info--content {
             font-size: 13px;
             line-height: 24px;
             font-weight: 500;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-          }
-          .btn-download{
+        }
+        
+        .btn-download {
             font-size: 20px;
             font-family: sans-serif;
-          
             padding: 20px 40px;
             border-radius: 15px;
             background-color: #ffcc05;
             border: 0;
             outline: 0;
-          }
+        }
     </style>
 </head>
+
 <body>
-    
+
     <div class="all" style="background-color: #fff;">
         <div class="ticket">
             <div class="ticket--start">
-              <img src="https://i.ibb.co/W3cK42J/image-1.png"/>
+                <img src="https://i.ibb.co/W3cK42J/image-1.png" />
             </div>
             <div class="ticket--center">
-              <div class="ticket--center--row">
-                <div class="ticket--center--col">
-                  <span>Your ticket for</span>
-                  <strong><span class="fromCoountry"></span> to <span class="toCountry"></span></strong>
-                </div>
-              </div>
-              <div class="ticket--center--row">
-                <div class="ticket--center--col">
-                  <span class="ticket--info--title">Departing date</span>
-                  <span class="ticket--info--subtitle" id="departingDate"></span>
-                  <span class="ticket--info--content">7:00 am to 9:00 pm (GMT+1)</span>
-                </div>
-                <div class="ticket--center--col">
-                  <span class="ticket--info--title">Return date</span>
-                  <span class="ticket--info--subtitle" id="returnDate"></span>
-                  <!-- <span class="ticket--info--content">Location complete address, Town, COUNTRY</span> -->
-                </div>
-              </div>
-              <div class="ticket--center--row">
-                <div class="ticket--center--col">
-                  <span class="ticket--info--title">Duration</span>
-                  <span class="ticket--info--content" id="flyingDuration"></span>
-                </div>
-                <div class="ticket--center--col">
-                  <span class="ticket--info--title">Order info</span>
-                  <span  class="ticket--info--content">Order #0123456789. Ordered By Jhon DOE</span>
-                </div>
-              </div>
+                
             </div>
             <div class="ticket--end">
-              <div><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Qrcode_wikipedia_fr_v2clean.png"></div>
-              <div><img src="https://qidoon.com/assets/img/logo.svg"/></div>
-              
-              
+                <div><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Qrcode_wikipedia_fr_v2clean.png"></div>
+                <div><img src="https://qidoon.com/assets/img/logo.svg" /></div>
+
+
             </div>
-            
-          </div>
+
+        </div>
     </div>
 
-      <button type="button" class="btn-download" id="generatePDF">Download ticket</button>
+    <button type="button" class="btn-download" id="generatePDF">Download ticket</button>
 
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
     <script>
-        $(document).on('click','#generatePDF',function(){
+        $(document).on('click', '#generatePDF', function() {
             let pdf = new jsPDF();
-            let section=$('.all');
-            let page= function() {
+            let section = $('.all');
+            let page = function() {
                 pdf.save('ticket.pdf');
-               
+
             };
-            pdf.addHTML(section,page);
-            })
+            pdf.addHTML(section, page);
+        })
 
+        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjFlZGQ1NDI4LWZkNTEtNDJmYS1iY2Y3LWRmMzEyYjk4NDdhMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjgyOTI3NzQ5fQ.YANqwGg7mhvSs1GtHLUUjnh_S6Z_g2lyfCgCU5LJ7dk"
+        let ticket = document.querySelector(".ticket--center");
+        console.log(ticket)
 
-            fetch("https://ticketbook.azurewebsites.net/api/Reservations",
-                {
-                    headers: {
+        fetch("https://ticketbook.azurewebsites.net/api/Reservations", {
+                headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    'Authorization': token
-                    },
-                    mode: "no-cors",
-                    method: "GET",
-                })
-                .then(function(res){
-                    console.log(res)
-                 })
-                .catch(function(res){ console.log(res) })
+                    'Authorization': 'Bearer ' + token,
+                },
+                // mode: "no-cors",
+                method: "GET",
+            })
+            .then(function(response){
+              return response.json()
+            })
+            .then(function(data) {
+                console.log(data[0])
+                
+                if (data.length > 0) {
+                    for (let i = 0; i < data.length; i++) {
+                        ticket.innerHTML += `
+                        <div class="ticket--center--row">
+                          <div class="ticket--center--col">
+                              <span>Your ticket for</span>
+                              <strong><span class="fromCoountry"></span> from <span class="fromCountry">${data[i].flight.from}</span></strong>
+
+                              <strong><span class="fromCoountry"></span> to <span class="toCountry">${data[i].flight.dest}</span></strong>
+
+                          </div>
+                      </div>
+                      <div class="ticket--center--row">
+                          <div class="ticket--center--col">
+                              <span class="ticket--info--title">Departing date</span>
+                              <span class="ticket--info--subtitle" id="departingDate">${data[i].flight.departureDate}</span>
+                              <span class="ticket--info--content"></span>
+                          </div>
+                          <div class="ticket--center--col">
+                              <span class="ticket--info--title">Return date</span>
+                              <span class="ticket--info--subtitle" id="returnDate">${data[i].flight.arrivalDate}</span>
+                              <!-- <span class="ticket--info--content">Location complete address, Town, COUNTRY</span> -->
+                          </div>
+                      </div>
+                      <div class="ticket--center--row">
+                          <div class="ticket--center--col">
+                              <span class="ticket--info--title">Duration</span>
+                              <span class="ticket--info--content" id="flyingDuration">${data[i].flight.duration}</span>
+                          </div>
+                          <div class="ticket--center--col">
+                              <span class="ticket--info--title">Order info</span>
+                              <span class="ticket--info--content">${data[i].adultCount} Adults : ${data[i].childCount} Children</span>
+                          </div>
+                      </div>
+                  `
+                    }
+                } else {
+                    ticket.innerHTML = `
+                    <div class="info bg-secondary rounded p-2 mx-auto text-center" style="width: 200px; font-size: 21px; color: #fff;">
+                    No data found!
+                  </div>
+                    `
+                }
+
+
+            });
     </script>
 </body>
+
 </html>

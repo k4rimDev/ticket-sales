@@ -243,7 +243,7 @@
               </li> -->
               <li class="nav-item"><a class="nav-link fw-bold text-uppercase" href="#"><span>Home</span></a>
               </li>
-              <!-- <li class="nav-item"><a class="nav-link fw-bold text-uppercase" href="hotel.html"><span>Hotel</span></a> -->
+              <li class="nav-item"><a class="nav-link fw-bold text-uppercase" href="hotel.html"><span>Hotel</span></a>
               </li>
                <li class="nav-item"><a class="nav-link fw-bold text-uppercase" href="flights.html"><span>flights</span></a>
               </li>
@@ -461,7 +461,7 @@
                           </div>
                         </div>
                         <div class="form-group col-12 col-sm-5 col-md-3 col-xl-2 d-flex justify-content-center flex-column">
-                          <select id= "flightStatus1" class="form-select" name="class">
+                          <select id= "flightStatus1" class="form-select" name="class" >
                             <option value="0" selected>
                               <p>Economic</p>
                             </option>
@@ -472,17 +472,18 @@
                               Both
                             </option>
                           </select>
+                          
                           <div class="div d-flex justify-content-center">
                             <div class="mx-2">
                               <label class="label-text">Adults</label>
                               <div class="qty">
-                                <input class="js-qty" type="text" name="adultCount" value="2" data-mask="00"/>
+                                <input class="js-qty" type="text" name="adultCount" id="adultCount" value="2" data-mask="00"/>
                               </div>
                             </div>
                             <div class="mx-2">
                               <label class="label-text">Children</label>
                               <div class="qty">
-                                <input class="js-qty" type="text" name="childCount" value="2" data-mask="00"/>
+                                <input class="js-qty" type="text" name="childCount" id="childCount" value="2" data-mask="00"/>
                               </div>
                             </div>
                           </div>

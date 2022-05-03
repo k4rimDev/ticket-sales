@@ -5,6 +5,9 @@ let flightsInfo = document.querySelector('#flightsInfo')
 window.addEventListener('load', (e)=>{
     let origin = window.location.href
     let arrOrigin = ((origin.split('?')[1]).split('&'))
+    let adultCount = arrOrigin[5]
+    let childCount = arrOrigin[6]
+    console.log(arrOrigin, adultCount, childCount)
 
     fetch(`https://ticketbook.azurewebsites.net/api/Flights?${arrOrigin.join('&')}`).then(function(response) {
             return response.json();
@@ -85,7 +88,7 @@ window.addEventListener('load', (e)=>{
                                                     ${data[i].totalPrice}
                                                 €</div>
                                             </div>
-                                            <div class="col-7 col-md-12"><button class="btn btn-secondary btn--round" role="button" class="bookNow">book now</button>
+                                            <div class="col-7 col-md-12"><button class="btn btn-secondary btn--round" role="button" class="bookNow" onclick="bookTicket(${data[i].id}, ${adultCount}, ${childCount});" id="${data[i].id}">book now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -101,34 +104,52 @@ window.addEventListener('load', (e)=>{
                   </div>
                     `
                 }
-
-                let bookNow = document.querySelectorAll('.bookNow');
-                for (let i = 0; i < bookNow.length; i ++){
-                    console.log('asfsdf')
-                }
-                bookNow.forEach((bookNowBtn) =>{
-                    bookNowBtn.addEventListener('click', (e)=>{
-                        console.log('sdfsdf')
-                    })
-                })
                 console.log(bookNow)
-                // bookNow.addEventListener('click', (e)=>{
-                //     console.log('afasdfsdfsd')
-                // })
                 }
                 ).catch(function() {
                 console.log("Error!!");
             });
 
+            
+            // let token = 
 
-
-            fetch('https://ticketbook.azurewebsites.net/api/Reservations')
-            .then(function(response) {
-                return response.json();
-                }).then(function(data) {
-                    console.log(data)
+            // fetch('https://ticketbook.azurewebsites.net/api/Reservations')
+            // .then(function(response) {
+            //     return response.json();
+            //     }).then(function(data) {
+            //         console.log(data)
                     
-                }).catch(function() {
-                    console.log("Error!!");
-                });
-})
+            //     }).catch(function() {
+            //         console.log("Error!!");
+            //     });
+});
+
+
+
+function bookTicket(id, adultCount, childCount){
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjFlZGQ1NDI4LWZkNTEtNDJmYS1iY2Y3LWRmMzEyYjk4NDdhMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjgzMDk3OTc4fQ.uli3uwU4f2QNdE6tzlwGsGlE5GXr3eq-4NRE0NAQthk"
+
+    fetch("https://ticketbook.azurewebsites.net/api/Reservations", {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                // "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
+                'Authorization': 'Bearer ' + token,
+            },
+            // mode: "no-cors",
+            method: "POST",
+            body: JSON.stringify({
+                "flightId": id,
+                "adultCount": adultCount,
+                "childCount": childCount
+                    // "email": email[0].valaue,
+                    // "password": password[0].value
+            })
+        })
+        .then(function(res) {
+            console.log(res)
+                // localStorage.setItem("token", res.token)
+        })
+        .catch(function(res) { console.log(res) })
+    window.location.href = `http://127.0.0.1:5501/ticket.html?id=${id}&adultCount=${adultCount}&childCount=${childCount}`
+}
